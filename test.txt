@@ -1,0 +1,8 @@
+this is a test text file.
+I add a new line words.
+1
+1
+1
+x
+h
+NF

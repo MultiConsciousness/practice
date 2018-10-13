@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.shirotest.mapper.UserInfoMapper">
+    <resultMap id="basicMap" type="com.shirotest.po.UserInfo">
+        <id column="info_id" property="infoId"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="salt" column="salt"/>
+    </resultMap>
+
+    <select id="findInfoByName" resultMap="basicMap" parameterType="java.lang.String">
+        <if test="null != username">
+            select * from user_info where username = #{username}
+        </if>
+    </select>
+</mapper>

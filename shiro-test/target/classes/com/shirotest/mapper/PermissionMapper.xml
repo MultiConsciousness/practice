@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.shirotest.mapper.PermissionMapper">
+
+    <resultMap id="basicMap" type="com.shirotest.po.Permission">
+        <id column="permission_id" property="permissionId"/>
+        <result column="permission_name" property="permissionName"/>
+    </resultMap>
+
+    <select id="selectById" resultMap="basicMap" parameterType="java.lang.Integer">
+        select * from permission where permission_id =#{permissionId}
+    </select>
+</mapper>
